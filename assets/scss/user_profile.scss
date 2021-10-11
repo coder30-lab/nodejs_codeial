@@ -1,0 +1,22 @@
+form {
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(157, 182, 228);
+    width: 40%;
+}
+
+form input {
+    margin: 10px;
+    border-style: inset;
+    height: 30px;
+    width: 25%;
+}
+
+.btn {
+    width: 100px;
+    background-color: chartreuse;
+}

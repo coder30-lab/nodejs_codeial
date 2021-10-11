@@ -1,0 +1,16 @@
+header {
+  background-color: #b694d6; }
+  header #heading {
+    margin-left: 0%; }
+  header .nav-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 30px; }
+  header li {
+    margin-left: 20px;
+    list-style-type: none;
+    text-transform: uppercase;
+    padding-bottom: 15px; }
+  header a {
+    color: white; }

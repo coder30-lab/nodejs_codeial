@@ -1,0 +1,21 @@
+header {
+    background-color: rgb(182, 148, 214);
+    #heading {
+        margin-left: 0%;
+    }
+    .nav-ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-right: 30px;
+    }
+    li {
+        margin-left: 20px;
+        list-style-type: none;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+    a {
+        color: white;
+    }
+}
