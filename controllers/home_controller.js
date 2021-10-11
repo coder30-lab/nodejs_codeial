@@ -1,5 +1,25 @@
+const Post = require('../models/post');
 module.exports.home = function(req, res) {
-    return res.render('home', {
-        title: "Home"
+    // Post.find({}, function(err, posts) {
+
+    //     return res.render('home', {
+    //         title: "Home",
+    //         posts: posts
+    //     });
+
+    // })
+
+    Post.find({}).
+    populate('user'). // only return the user name
+    exec(function(err, posts) {
+        if (err) return handleError(err);
+        return res.render('home', {
+            title: "Home",
+            posts: posts
+        });
+
     });
+
+
+
 }

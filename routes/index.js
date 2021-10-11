@@ -7,7 +7,7 @@ const postController = require('../controllers/post_controller');
 
 router.get('/', homeController.home);
 router.use('/users', require('./users'));
-router.use('/post', require('./post'));
+router.use('/posts', require('./posts'));
 //for any further route
 //router.use('/routername', require('./routerFile'));
 
