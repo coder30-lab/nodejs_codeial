@@ -10,15 +10,21 @@ module.exports.home = function(req, res) {
     // })
 
     Post.find({}).
-    populate('user'). // only return the user name
-    exec(function(err, posts) {
-        if (err) return handleError(err);
-        return res.render('home', {
-            title: "Home",
-            posts: posts
-        });
+    populate('user').
+    populate({
+            path: 'comments',
+            populate: {
+                path: 'user'
+            }
+        }) // only return the user name
+        .exec(function(err, posts) {
+            if (err) return handleError(err);
+            return res.render('home', {
+                title: "Home",
+                posts: posts
+            });
 
-    });
+        });
 
 
 
