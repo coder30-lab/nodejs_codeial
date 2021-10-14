@@ -16,43 +16,20 @@
             <div id="post-list-container">
                 <ul>
                     <% for(post of posts){ %>
-                        <li>
-                            <p>
-                                <h1>
-                                    <%=post.content%>
-                                </h1>
-                                <small><%=post.user.name%></small>
-                            </p>
-                            <div class="post-comment">
-                                <%if(locals.user){%>
-                                    <form action="/comments/create" id="new-comment-form" method="post">
-                                        <input id="" name="content" placeholder="type here to add comments..." required>
+                        <%-include('_post')-%>
 
-                                        </input>
-                                        <input type="hidden" name="post" value="<%=post._id%>">
-                                        <input type="submit" value="Add Comment">
-                                    </form>
-
-                                    <% }%>
-
-
-                                        <div class="post-comment-list">
-                                            <ul id="post-comments-<%=post._id%>">
-                                                <% for(comment of post.comments){%>
-                                                    <p>
-                                                        <%=comment.content%><br>
-                                                            <small><%=comment.user.name%></small>
-                                                    </p>
-
-                                                    <%}%>
-
-                                            </ul>
-                                        </div>
-                            </div>
-                        </li>
-
-
-                        <% }%>
+                            <% }%>
                 </ul>
             </div>
+</section>
+<section id="user-friends">
+
+    <h4>Friends</h4>
+    <%for ( u of all_users){%>
+        <p>
+            <a href="/users/profile/<%=u.idccc%>"></a>
+        </p>
+
+        <%}%>
+
 </section>

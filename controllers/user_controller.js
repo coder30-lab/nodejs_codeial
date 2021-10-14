@@ -1,10 +1,13 @@
 //const express = require("express");
 const User = require('../models/user');
 module.exports.profile = function(req, res) {
+    User.findById(req.params.id, function(err, user) {
 
-    return res.render('user_profile', {
-        title: 'User Profile'
-    })
+        return res.render('user_profile', {
+            title: 'User Profile',
+            profile_user: user
+        });
+    });
 }
 module.exports.friend = function(req, res) {
     res.end('<h1>Friends Section</h1>')
